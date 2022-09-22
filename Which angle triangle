@@ -1,0 +1,49 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Main{
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int maxint=0;
+        int sum=0;
+        int large=0;
+        
+        
+        //input a=3,b=4,c=5        
+        if(a>=b && a>=c)                    //3>=4 && 3>=5 
+        {
+            maxint=a;
+        }
+        else if(b>=a && b>=c)              //4>=3 && 4>=5
+        {
+            maxint=b;
+        }
+        else{
+            maxint=c;                     //5>=3 && 5>=4  (#)
+        }
+         sum=a*a+b*b+c*c;                //3*3+4*4+5*5=50
+         large=2*maxint*maxint;          //2*5*5=50
+         
+         if(sum>large)                                                     //50>50
+         {
+             System.out.println(1);                                       //output 1 for acute, 
+         } 
+         else if(sum==large)                                             //50==50  (#) print 2
+         {
+             System.out.println(2);                                     //2 for right-angled, and 
+         }
+         else{                                                            //50<50
+             System.out.println(3);//3 for an obtuse-angled triangle
+         }
+    }
+}
+
+/*
+intput:
+3 4 5
+output:
+2
+*/
